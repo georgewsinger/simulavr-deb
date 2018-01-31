@@ -1,0 +1,14 @@
+ Source: simulavr
+ Section: x11
+ Priority: optional
+ Maintainer: George Singer <george.w.singer@gmail.com>
+ Build-Depends: debhelper (>= 10)
+ Standards-Version: 4.1.2
+ Homepage: https://github.com/SimulaVR/Simula
+ #Vcs-Git: https://github.com/SimulaVR/Simula.git
+
+ Package: simulavr
+ Architecture: any
+ # The last of these dependencies are the most tenuous
+ Depends: ${shlibs:Depends}, ${misc:Depends}, g++ , automake , autoconf , autoconf-archive , make , cmake , libtool , pkg-config , binutils-dev , libegl1-mesa-dev , libgles2-mesa-dev , libxcb-composite0-dev , libxcursor-dev , libcairo2-dev , libpixman-1-dev , libgbm-dev , libmtdev-dev , libinput-dev , libxkbcommon-dev , libpam0g-dev , libgflags-dev , libgoogle-glog-dev , libssl-dev , libdouble-conversion-dev , libevent-dev , libboost-context-dev , libboost-chrono-dev , libboost-filesystem-dev , libboost-iostreams-dev , libboost-locale-dev , libboost-program-options-dev , libboost-regex-dev , libboost-system-dev , libboost-thread-dev , libsdl2-dev , libopencv-dev , libjsoncpp-dev , libxml2-dev , libusb-1.0-0-dev , libspdlog-dev , libeigen3-dev , libvulkan-dev, wayland-protocols, libweston-3-dev, steam, steam-devices, openvr, haskell-stack 
+ Description: VR Window Manager for Linux.

@@ -1,0 +1,11 @@
+ # Ignore tars and such to avoid GitHub file size limits; we generate these files from scratch
+ simulavr*.tar.gz
+ simulavr*.deb
+ simulavr*.changes
+ simulavr*.buildinfo
+ simulavr*.xz
+ simulavr*.dsc
+
+ # Ignore sources since we're generating these automatically anyway:
+ simulavr-0.0.0
+ simulavr-0.0.0/*

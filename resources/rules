@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+%:
+  dh $@
+
+clean:
+  make clean
+  # stack clean
+
+check:
+
+override_dh_auto_build:
+  stack upgrade
+  stack install hpack
+  make init
+  stack setup --install-ghc
+  stack build # --extra-lib-dirs=/usr/local/lib

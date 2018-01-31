@@ -1,0 +1,1 @@
+See =./resources/Spec.sh= for an overview of how to generate the Debian Simula source package.
