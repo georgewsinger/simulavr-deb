@@ -58,7 +58,7 @@ generateFreshSource() {
 
 generateFreshUpstreamTar() {
     git clone $REPO tmp-$PACKAGE-$VERSION
-    cd tmp-$PACKAGE-$REPO
+    cd tmp-$PACKAGE-$VERSION
     make init
     make clean
     cd ..
@@ -70,7 +70,7 @@ generateFreshUpstreamTar() {
 dhMake() {
     cd "$PACKAGE-$VERSION"
     make clean
-    dh_make --createorig -s -p "$PACKAGE"_"$VERSION"
+    dh_make --createorig -s -p "$PACKAGE"_"$VERSION" # weird; this seems to freeze but work if you C-c out of it
     cd ..
 }
 
@@ -196,6 +196,7 @@ verifyPackageInstallation() {
 }
 
 cleanRoot() {
+    sudo rm "$PACKAGE"*build
     sudo rm "$PACKAGE"*buildinfo
     sudo rm "$PACKAGE"*changes
     sudo rm "$PACKAGE"*deb
