@@ -1,5 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: simulavr
+Upstream-Name: simula
 Source: https://github.com/SimulaVR/Simula
 
 Files: *

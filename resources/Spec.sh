@@ -1,7 +1,7 @@
 
-PACKAGE="simulavr"
+PACKAGE="simula"
 VERSION="0.0.0"
-REPO="https://github.com/SimulaVR/Simula"
+REPO="https://github.com/SimulaVR/Simula.git"
 
 installDebHelpers() {
   sudo apt install  \
@@ -70,7 +70,8 @@ generateFreshUpstreamTar() {
 dhMake() {
     cd "$PACKAGE-$VERSION"
     make clean
-    dh_make --createorig -s -p "$PACKAGE"_"$VERSION" # weird; this seems to freeze but work if you C-c out of it
+   # dh_make --createorig -s -p "$PACKAGE"_"$VERSION" # weird; this seems to freeze but work if you C-c out of it; QWERTY
+    dh_make -f ../$PACKAGE-$VERSION.tar.gz # I believe we want option `s`, a single binary package that will make one `openvr*.deb`
     cd ..
 }
 
@@ -276,7 +277,7 @@ uploadPackage() {
     # http://packaging.ubuntu.com/html/getting-set-up.html
     # http://packaging.ubuntu.com/html/packaging-new-software.html
     # https://www.debian.org/doc/manuals/maint-guide/upload.en.html
-    dput ppa:georgewsinger/simula "$PACKAGE"_"$VERSION"-0ubuntu1_amd64.changes # TODO: Make sure this naming is correct
+    dput ppa:georgewsinger/simula "$PACKAGE"_"$VERSION"-0ubuntu1_source.changes # TODO: Make sure this naming is correct
 }
 
 addSimulaRepositoryPPA() {
